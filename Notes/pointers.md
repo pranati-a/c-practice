@@ -1,23 +1,21 @@
-##pointers 
+## Pointers
 
--stores value of another variable
--* is used while declaring and pointer variable 
-eg: int *p;
--& is used when assigning an address value.
-eg: p=&a (if a is already an int variable)
+- A pointer stores the address of another variable.
+- `*` is used when declaring a pointer variable. Example: `int *p;`
+- `&` gives the address of a variable. Example: `p = &a;` (if a is already an int variable)
 
-'''
+```c
 int a;
 int *p;
-p=&a;     // &a is address of a
-a=5;
-printf("%d",p);
-printf("%d",*p);     //*p - value at address pointed by p
-printf("%d",&a);    // address of a is displayed.
-*p= 12;    // the value at a is changed
-'''
+p = &a;              // &a is the address of a
+a = 5;
+printf("%p", p);     // address stored in p
+printf("%d", *p);    // *p is the value at the address p points to: 5
+printf("%p", &a);    // address of a
+*p = 12;             // the value of a is changed to 12
+```
 
-#pointer arithmetic
+## Pointer arithmetic
 
-- p+1 will increment 
-eg: p=202, p+1 will be 206 since p is int and int has 4 bytes memory, p+1 shall print to next int address
+- p + 1 moves to the next int, not the next byte.
+- Example: if p = 202, then p + 1 = 206, because an int takes 4 bytes.
